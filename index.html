@@ -24,7 +24,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: -2%;
-height: 500px; 
+height: 525px; 
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -132,6 +132,24 @@ animation: blink 1s linear infinite;
 font-size: 36px;
 }
 
+.back-button {
+  margin-top: 6px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #00db16; /* You can change this color to your preference */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #3949AB; /* Darker shade on hover */
+}
+
+
 </style>
 
 
@@ -189,6 +207,9 @@ font-size: 36px;
             </div>
           </div>
           </div>
+          <center>
+            <input class="back-button" id="backbutton" type="button" value="BACK">
+            </center>
           </div>
         </center>
 
@@ -253,6 +274,9 @@ font-size: 36px;
   
              </center>
          </div>
+         <center>
+          <input class="back-button" id="backbutton1" type="button" value="BACK">
+         </center>
          </div>
   
   
@@ -319,6 +343,9 @@ font-size: 36px;
   
              </center>
          </div>
+         <center>
+          <input class="back-button" id="backbutton2" type="button" value="BACK">
+         </center>
          </div>
   
   
@@ -393,6 +420,9 @@ font-size: 36px;
   
              </center>
          </div>
+         <center>
+          <input class="back-button" id="backbutton3" type="button" value="BACK">
+         </center>
          </div>
   
   
@@ -466,6 +496,9 @@ font-size: 36px;
   
              </center>
          </div>
+         <center>
+          <input class="back-button" id="backbutton4" type="button" value="BACK">
+         </center>
          </div>
          </div>
 
@@ -522,6 +555,30 @@ font-size: 36px;
               document.getElementById("box6").style.display = "none";
               document.getElementById("webssad").style.display = "inline";
             });
+
+
+
+            document.getElementById("backbutton").addEventListener("click", function() {
+          window.history.back();
+          });
+
+            document.getElementById("backbutton1").addEventListener("click", function() {
+              document.getElementById("moviesad").style.display = "none";
+              document.getElementById("box6").style.display = "inline";
+          });
+            document.getElementById("backbutton2").addEventListener("click", function() {
+              document.getElementById("box6").style.display = "inline";
+              document.getElementById("moviesad").style.display = "none";
+              document.getElementById("songsad").style.display = "none";
+          });
+            document.getElementById("backbutton3").addEventListener("click", function() {
+              document.getElementById("box6").style.display = "inline";
+              document.getElementById("booksad").style.display = "none";
+          });
+            document.getElementById("backbutton4").addEventListener("click", function() {
+              document.getElementById("box6").style.display = "inline";
+              document.getElementById("webssad").style.display = "none";
+          });
         </script>
     
     
