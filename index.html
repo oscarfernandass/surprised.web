@@ -5,9 +5,10 @@
 </head>
 <h1 style="text-align: center; font-family:Bradley Hand, cursive; font-size: 62px; margin-top: 2%; color:aquamarine">SUPRISED?</h1>
 
-<body>
+<body onmouseover="playAudio()">
 
 
+    <audio id="myAudio" src="https://sndup.net/tbj5/d" autoplay></audio>
 
 
 
@@ -15,7 +16,7 @@
 
 <style>
     #input-box {
-  width: 1400px;
+  width: 1045px;
  
    padding: 30px; 
   background-image: url("https://media.istockphoto.com/id/1092823870/vector/seamless-background-pattern-gray-grayscale-wallpaper-vector-illustration.jpg?s=612x612&w=0&k=20&c=5ZYHWgqb1ZIpepWFOFwyDDPEaUTB_wJ82RDue1-E9Dc=");
@@ -32,6 +33,7 @@ html{
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ4YdwWzx9jb2kmWEQzJLh6Zmr-sSjNcP6-8k6OBeZ&s");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: aqua;
 }
 h1{
   transition: transform 0.5s ease-in-out;
@@ -508,10 +510,24 @@ font-size: 36px;
 
 
 
-
+         <br>
+         <h2 style="text-align: center; font-family:Bradley Hand, cursive; font-size: 40px; color: #10ffef;">Take a look</h2>
+         <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+         <div class="elfsight-app-7858b6bc-c9e0-4c48-8edd-e29e8c3b3097"></div>
 
 
          <script>
+
+
+
+
+
+var audio = document.getElementById("myAudio");
+
+function playAudio() {
+   audio.play();
+}
+
 
             function runByDefault() {
                   const responseText = "We know that your suprised right now,relax we still have much more on our website,choose any to continue...";
