@@ -1,20 +1,36 @@
-
 <html>
 <head>
-    <title>surprised</title>
+    <title>suprised</title>
 </head>
-<h1 style="text-align: center; font-family:Bradley Hand, cursive; font-size: 62px; margin-top: 2%; color:aquamarine">SUPRISED?</h1>
 
-<body onmouseover="playAudio()">
+<body onmouseover="startPlayback()" style="margin-top: -2%;">
+  <center>
+  <div class="fadeer" >
+  <h1 style="text-align: center; font-family:Bradley Hand, cursive; font-size: 62px; margin-top: 2%; color:aquamarine; margin-left: 0%;">SUPRISED?
+  </h1>
+</div>
 
+</center>
 
-    <audio id="myAudio" src="https://sndup.net/tbj5/d" autoplay></audio>
+  <audio id="audio1">
+    <source src="https://sndup.net/nb9p/d" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <audio id="audio2">
+    <source src="https://sndup.net/tyv8/d" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <audio id="audio3">
+    <source src="https://sndup.net/qmp6/d" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
 
-
-
-    
 
 <style>
+  
     #input-box {
   width: 1045px;
  
@@ -24,7 +40,7 @@
   
   margin-left: auto;
   margin-right: auto;
-  margin-top: -2%;
+  margin-top: -1%;
 height: 525px; 
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
@@ -35,12 +51,13 @@ html{
   background-size: cover;
   background-color: aqua;
 }
-h1{
-  transition: transform 0.5s ease-in-out;
+
+.fadeer{
+  transition: transform 0.3s ease-in-out;
 }
 
-h1:hover {
-  transform: scale(1.2);
+.fadeer:hover {
+  transform: scale(0.8);
 }
 #box6{
   height: 167px;
@@ -123,6 +140,18 @@ font-style: oblique;
 transform: scale(1.24); /* Zoom effect */
 
 }
+.zoom{
+transition: transform 0.2s, background-color 0.2s;
+color: aqua;
+border-radius: 2px;
+}
+
+.zoom:hover{
+background-color:chartreuse;
+font-style: oblique;
+transform: scale(0.9); /* Zoom effect */
+
+}
 @keyframes blink {
 0% { color: rgb(0, 255, 255); }
 50% { color: blue; }
@@ -135,7 +164,7 @@ font-size: 36px;
 }
 
 .back-button {
-  margin-top: 6px;
+  margin-top: 12px;
   padding: 10px 20px;
   font-size: 20px;
   font-weight: bold;
@@ -150,14 +179,85 @@ font-size: 36px;
 .back-button:hover {
   background-color: #3949AB; /* Darker shade on hover */
 }
+.back-butto {
+  margin-top: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #00db16; /* You can change this color to your preference */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.back-butto:hover {
+  background-color: #3949AB; /* Darker shade on hover */
+}
+#first{
+  display:flex;
+}
+#feedclick{
+  height: 520px;
+  margin-left: 20px;
+}
+#gameclick{
+  height:520px;
+  margin-right: 20px;
+}
+
+
+
+
+
+
+.icon-container {
+  display: inline-block;
+  position: relative;
+  margin-left: 5px; /* Adjust the margin as needed */
+}
+
+.rotate-icon {
+  top: 10%;
+  width: 60px;
+  height: 60px;
+  transition: transform 1s linear;
+}
+
+.rotate {
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 </style>
-
-
-
+<div id="first">
+<a href="#feed" style="text-decoration: none;">
+  <div id="feedclick" class="zoom">
+    <img src="https://cdn-icons-png.flaticon.com/128/4612/4612366.png" style="height:170px; width:170px; border-radius: 25px;">
+    <center>
+      <h2 style="font-size: 60px; color:floralwhite">
+        F<br>
+        E<br>
+        E<br>
+        D
+      </h2>
+    </center>
+  </div>
+</a>
 <div id="input-box">
     <center>
+      <div style="top: 50%; margin-top: -5%; ">
+        <button class="back-butto" id="toggleButton" style="margin-right:17px;">PLAY</button>
+        <div class="icon-container">
+          <img src="https://cdn-icons-png.flaticon.com/128/1895/1895657.png" class="rotate-icon" id="iconImage">
+        </div>
+        <button class="back-butto" id="nextButton" style="margin-left:20px;">NEXT</button>
+      </div>
     <div id="cover" style="width:100%">
 
 
@@ -168,7 +268,7 @@ font-size: 36px;
             </div>
             <br>
             <br>
-            <div id="sadbot" style="position: static;">
+            <div id="sadbot" style="position: static; margin-top: -3%;">
   
                <div id="see">
   
@@ -210,7 +310,11 @@ font-size: 36px;
           </div>
           </div>
           <center>
-            <input class="back-button" id="backbutton" type="button" value="BACK">
+            
+              <input class="back-button" id="backbutton" type="button" value="BACK">
+              
+              
+
             </center>
           </div>
         </center>
@@ -503,33 +607,44 @@ font-size: 36px;
          </center>
          </div>
          </div>
+         <a href="#game" style="text-decoration: none;">
+         <div id="gameclick" class="zoom">
+          <img src="https://cdn-icons-png.flaticon.com/128/2780/2780137.png" style="height:150px; width:150px; border-radius: 25px;">
+          <center>
+            <h2 style="font-size: 60px; color:floralwhite">
+              G<br>
+              A<br>
+              M<br>
+              E
+            </h2>
+          </center>
+        </div>
+      </a>
 
+         </div>
+<br>
+<center>
 
-
-
+  <h2 id="game" style="text-align: center; font-family:Bradley Hand, cursive; font-size: 65px; color: #10ffef;">Play and relax.</h2>
+  <div style="height: 700px;width: 950px;"><script src="https://cdn.htmlgames.com/embed.js?game=ClassicBubbleShooter&amp;bgcolor=white"></script></div>
+</center>
 
 
 
          <br>
-         <h2 style="text-align: center; font-family:Bradley Hand, cursive; font-size: 40px; color: #10ffef;">Take a look</h2>
+         <h2 id="feed" style="text-align: center; font-family:Bradley Hand, cursive; font-size: 65px; color: #10ffef;">Feed</h2>
          <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
          <div class="elfsight-app-7858b6bc-c9e0-4c48-8edd-e29e8c3b3097"></div>
+
+
 
 
          <script>
 
 
-
-
-
-var audio = document.getElementById("myAudio");
-
-function playAudio() {
-   audio.play();
-}
-
-
-            function runByDefault() {
+           
+           
+           function runByDefault() {
                   const responseText = "We know that your suprised right now,relax we still have much more on our website,choose any to continue...";
                   const responseElement = document.getElementById("sadtext");
             
@@ -540,7 +655,7 @@ function playAudio() {
                       }, i * 50);
                     }
                   }
-            
+                  
                   responseElement.style.color = "red";
                   responseElement.style.fontSize = "40px";
                   responseElement.style.fontFamily = "Courier New, monospace, Courier, monospace";
@@ -548,12 +663,12 @@ function playAudio() {
             
                   document.getElementById("input-box").style.width = "1045px";
                 }
-            
+                
                 // Run the function when the page finishes loading.
                 window.onload = runByDefault;
-
-
-
+                
+                
+                
                 document.getElementById("sadmovies").addEventListener("click", function(event){
               document.getElementById("box6").style.display = "none";
               document.getElementById("moviesad").style.display = "inline";
@@ -571,31 +686,137 @@ function playAudio() {
               document.getElementById("box6").style.display = "none";
               document.getElementById("webssad").style.display = "inline";
             });
-
-
-
+            
+            
+            
             document.getElementById("backbutton").addEventListener("click", function() {
-          window.history.back();
+              window.history.back();
           });
 
             document.getElementById("backbutton1").addEventListener("click", function() {
               document.getElementById("moviesad").style.display = "none";
               document.getElementById("box6").style.display = "inline";
-          });
+            });
             document.getElementById("backbutton2").addEventListener("click", function() {
               document.getElementById("box6").style.display = "inline";
               document.getElementById("moviesad").style.display = "none";
               document.getElementById("songsad").style.display = "none";
-          });
+            });
             document.getElementById("backbutton3").addEventListener("click", function() {
               document.getElementById("box6").style.display = "inline";
               document.getElementById("booksad").style.display = "none";
           });
-            document.getElementById("backbutton4").addEventListener("click", function() {
-              document.getElementById("box6").style.display = "inline";
-              document.getElementById("webssad").style.display = "none";
+          document.getElementById("backbutton4").addEventListener("click", function() {
+            document.getElementById("box6").style.display = "inline";
+            document.getElementById("webssad").style.display = "none";
           });
-        </script>
+          
+          
+          
+
+         const audio1 = document.getElementById("audio1");
+  const audio2 = document.getElementById("audio2");
+  const audio3 = document.getElementById("audio3");
+  const toggleButton = document.getElementById("toggleButton");
+  const iconImage = document.getElementById("iconImage");
+  let isRotating = false;
+
+  let currentAudio = null;
+
+  function startPlayback() {
+    if (!currentAudio) {
+      currentAudio = audio1;
+      currentAudio.play();
+      currentAudio.addEventListener("ended", playAudio2);
+    }
+  }
+
+  function playAudio2() {
+    currentAudio = audio2;
+    audio1.removeEventListener("ended", playAudio2);
+    audio2.play();
+    audio2.addEventListener("ended", playAudio3);
+  }
+
+  function playAudio3() {
+    currentAudio = audio3;
+    audio2.removeEventListener("ended", playAudio3);
+    audio3.play();
+    audio3.addEventListener("ended", restartPlayback);
+  }
+
+  function restartPlayback() {
+    currentAudio = audio1;
+    audio3.removeEventListener("ended", restartPlayback);
+    audio1.play();
+    audio1.addEventListener("ended", playAudio2);
+  }
+
+  toggleButton.addEventListener("click", togglePlayback);
+
+  function togglePlayback() {
+
+    if (isRotating) {
+    iconImage.classList.remove("rotate");
+    isRotating = false;
+  }
+
+  if (currentAudio.paused) {
+    currentAudio.play();
+    toggleButton.textContent = "PAUSE";
+    if (!isRotating) {
+      iconImage.classList.add("rotate");
+      isRotating = true;
+    }
+  } else {
+    currentAudio.pause();
+    toggleButton.textContent = "PLAY";
+  }
+  }
+
+
+
+  const nextButton = document.getElementById("nextButton");
+
+
+
+
+  nextButton.addEventListener("click", playNextSong); // Add this function
+
+function playNextSong() {
+  currentAudio.pause();
+  toggleButton.textContent = "PLAY";
+  if (currentAudio === audio1) {
+    playAudio2();
+    toggleButton.textContent = "PAUSE";
+    if (!isRotating) {
+      iconImage.classList.add("rotate");
+      isRotating = true;
+    }
+
+  } else if (currentAudio === audio2) {
+    playAudio3();
+    toggleButton.textContent = "PAUSE";
+    if (!isRotating) {
+      iconImage.classList.add("rotate");
+      isRotating = true;
+    }
+
+  } else if (currentAudio === audio3) {
+    restartPlayback();
+    toggleButton.textContent = "PAUSE";
+    if (!isRotating) {
+      iconImage.classList.add("rotate");
+      isRotating = true;
+    }
+
+  }
+}
+
+
+
+ 
+  </script>
     
     
     
@@ -604,5 +825,5 @@ function playAudio() {
     
     
     
-</body>
-</html>
+  </body>
+  </html>
